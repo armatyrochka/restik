@@ -42,6 +42,16 @@ app.use((req, res) => {
   });
 });
 
+console.log('✅ Все маршруты загружены!');
+
+process.on('uncaughtException', (err) => {
+  console.error('❌ КРИТИЧЕСКАЯ ОШИБКА:', err);
+});
+
+process.on('unhandledRejection', (reason, promise) => {
+  console.error('❌ НЕОБРАБОТАННЫЙ REJECTION:', reason);
+});
+
 // Запуск сервера
 app.listen(PORT, () => {
   console.log(`🚀 Сервер запущено на порту ${PORT}`);
