@@ -51,12 +51,12 @@ export default function EditMenuItemPage() {
   }
 }
 
-// 🔥 ДОБАВЬ ЭТО В КОНЕЦ ФАЙЛА:
+// 🔥 ИСПРАВЛЕННАЯ ВЕРСИЯ:
 export async function generateStaticParams() {
   try {
     const response = await fetch('https://restik.onrender.com/api/menu');
     const items = await response.json();
-    return items.map((item: any) => ({
+    return items.map((item) => ({
       id: String(item.id),
     }));
   } catch (error) {
