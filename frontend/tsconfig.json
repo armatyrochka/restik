@@ -18,11 +18,12 @@
         "name": "next"
       }
     ],
-    "paths": {
-  "@/*": ["./src/*"],
-  "@/services/*": ["./src/services/*"],
-  "@/components/*": ["./src/components/*"],
-  "@/utils/*": ["./src/utils/*"]
+  "paths": {
+  "@/*": ["./*"],
+  "@/components/*": ["./components/*"],
+  "@/services/*": ["./services/*"],
+  "@/utils/*": ["./utils/*"],
+  "@/styles/*": ["./styles/*"]
 },
   },
   "include": [
