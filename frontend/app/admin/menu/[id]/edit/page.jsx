@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { getMenuItem, updateMenuItem } from 'services/menu';
-import MenuForm from '@/components/admin/MenuForm';
+import { getMenuItem, updateMenuItem } from '../../../../services/menu';
+import MenuForm from '../../../../components/admin/MenuForm';
 
 export default function EditMenuItemPage() {
   const router = useRouter();

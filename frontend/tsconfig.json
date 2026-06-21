@@ -18,16 +18,17 @@
         "name": "next"
       }
     ],
-"paths": {
-  "@/*": ["./*"],
-  "@/components/*": ["./components/*"],
-  "@/services/*": ["./services/*"],
-  "@/styles/*": ["./styles/*"],
-  "@/hooks/*": ["./hooks/*"],
-  "@/store/*": ["./store/*"],
-  "@services/*": ["./services/*"],
-  "@components/*": ["./components/*"]
-}
+    "paths": {}
+// "paths": {
+//   "@/*": ["./*"],
+//   "@/components/*": ["./components/*"],
+//   "@/services/*": ["./services/*"],
+//   "@/styles/*": ["./styles/*"],
+//   "@/hooks/*": ["./hooks/*"],
+//   "@/store/*": ["./store/*"],
+//   "@services/*": ["./services/*"],
+//   "@components/*": ["./components/*"]
+// }
   },
   "include": [
     "next-env.d.ts",
