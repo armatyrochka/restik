@@ -1,9 +1,7 @@
-'use client';
-
 import { useState, useEffect } from 'react';
 import { useRouter, useParams } from 'next/navigation';
-import { getMenuItem, updateMenuItem } from '@/services/menu';
-import MenuForm from '@/components/admin/MenuForm';
+import { getMenuItem, updateMenuItem } from '@services/menu';
+import MenuForm from '@components/admin/MenuForm';
 
 export default function EditMenuItemPage() {
   const router = useRouter();
@@ -32,26 +30,36 @@ export default function EditMenuItemPage() {
       router.push('/admin/menu');
     } catch (error) {
       console.error('Помилка:', error);
-      alert('Не вдалося оновити страву');
-    } finally {
-      setLoading(false);
+      alert('Не удалось обновить страницу');
     }
+    setLoading(false);
   };
 
   if (!initialData) {
-    return <div className="text-center py-12">Завантаження...</div>;
-  }
-
-  return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Редагувати страву</h1>
-      <div className="max-w-2xl">
-        <MenuForm
-          onSubmit={handleSubmit}
-          loading={loading}
-          initialData={initialData}
-        />
+    return (
+      <div className="container px-4 py-8">
+        <h1 className="text-3xl font-bold mb-8">Редагувати страву</h1>
+        <div className="max-w-2xl">
+          <MenuForm
+            onSubmit={handleSubmit}
+            loading={loading}
+            initialData={initialData}
+          />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+// 🔥 ДОБАВЬ ЭТО В КОНЕЦ ФАЙЛА:
+export async function generateStaticParams() {
+  try {
+    const response = await fetch('https://restik.onrender.com/api/menu');
+    const items = await response.json();
+    return items.map((item: any) => ({
+      id: String(item.id),
+    }));
+  } catch (error) {
+    return [];
+  }
 }
