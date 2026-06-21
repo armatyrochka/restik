@@ -18,13 +18,15 @@
         "name": "next"
       }
     ],
- "paths": {
+"paths": {
   "@/*": ["./*"],
   "@/components/*": ["./components/*"],
   "@/services/*": ["./services/*"],
   "@/styles/*": ["./styles/*"],
   "@/hooks/*": ["./hooks/*"],
-  "@/store/*": ["./store/*"]
+  "@/store/*": ["./store/*"],
+  "@services/*": ["./services/*"],
+  "@components/*": ["./components/*"]
 }
   },
   "include": [
