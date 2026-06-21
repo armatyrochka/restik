@@ -55,7 +55,7 @@ process.on('unhandledRejection', (reason, promise) => {
 // Запуск сервера
 app.listen(PORT, () => {
   console.log(`🚀 Сервер запущено на порту ${PORT}`);
-  console.log(`🌐 http://localhost:${PORT}`);
+  console.log(`🌐https://restik.onrender.com${PORT}`);
   console.log(`📋 Доступні маршрути:`);
   console.log(`  - GET  /api/health`);
   console.log(`  - POST /api/auth/register`);
